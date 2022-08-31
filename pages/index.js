@@ -21,7 +21,7 @@ export default function Home() {
 				vbY={vbY.animVal}
 				vbWH={vbWH.animVal}
 			/>
-			<div className="flex flex-col h-full w-1/3">
+			<div className="flex flex-col h-full w-1/3 overflow-clip">
 				<SliderContainer>
 					<h2 className="text-xl mb-4">Element Size</h2>
 					<Slider {...width.sliderProps} />
