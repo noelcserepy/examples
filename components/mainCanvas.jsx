@@ -1,8 +1,9 @@
 import { motion, useMotionTemplate } from "framer-motion";
-import Beach from "../public/beach-background.svg";
+import Mountains from "../public/mountains.svg";
+import MountainPaths from "./mountainPaths";
 
-export default function MainCanvas({ width, height, vbX, vbY, vbW, vbH }) {
-	const vbTemplate = useMotionTemplate`${vbX} ${vbY} ${vbW} ${vbH}`;
+export default function MainCanvas({ width, height, vbX, vbY, vbWH }) {
+	const vbTemplate = useMotionTemplate`${vbX} ${vbY} ${vbWH} ${vbWH}`;
 	const svgWidth = useMotionTemplate`${width}%`;
 	const svgHeight = useMotionTemplate`${height}%`;
 
@@ -18,8 +19,8 @@ export default function MainCanvas({ width, height, vbX, vbY, vbW, vbH }) {
 				width={svgWidth}
 				height={svgHeight}
 				xmlns="http://www.w3.org/2000/svg"
-				className="fill-orange border-4 border-orange ">
-				<Beach />
+				className="border-4 border-orange">
+				<MountainPaths />
 			</motion.svg>
 		</motion.div>
 	);

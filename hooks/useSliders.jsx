@@ -4,56 +4,18 @@ export default function useSliders() {
 	const stiffness = 1000;
 	const damping = 50;
 
-	const width = useSliderVal(
-		"Width",
-		60,
+	const width = useSliderVal("Width", 60, 0, 100, stiffness, damping, true);
+	const height = useSliderVal("Height", 60, 0, 100, stiffness, damping, true);
+	const vbX = useSliderVal("X", 379, -100, 1100, stiffness, damping);
+	const vbY = useSliderVal("Y", 173, -100, 1100, stiffness, damping);
+	const vbWH = useSliderVal(
+		"Width & Height",
+		231,
 		0,
-		100,
+		1000,
 		stiffness,
 		damping,
-		true,
-		[0, 200],
-		[0, 200]
-	);
-
-	const height = useSliderVal(
-		"Height",
-		60,
-		0,
-		100,
-		stiffness,
-		damping,
-		true,
-		[0, 200],
-		[0, 200]
-	);
-
-	const vbX = useSliderVal("X", 0, -100, 100, stiffness, damping);
-
-	const vbY = useSliderVal("Y", 0, -100, 100, stiffness, damping);
-
-	const vbW = useSliderVal(
-		"Width",
-		100,
-		0,
-		150,
-		stiffness,
-		damping,
-		true,
-		[0, 200],
-		[0, 200]
-	);
-
-	const vbH = useSliderVal(
-		"Height",
-		100,
-		0,
-		150,
-		stiffness,
-		damping,
-		true,
-		[0, 200],
-		[0, 200]
+		true
 	);
 
 	return {
@@ -61,7 +23,6 @@ export default function useSliders() {
 		height,
 		vbX,
 		vbY,
-		vbW,
-		vbH,
+		vbWH,
 	};
 }
