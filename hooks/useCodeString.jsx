@@ -7,7 +7,7 @@ export default function useCodeString({ width, height, vbX, vbY, vbWH }) {
 	useEffect(() => {
 		function updateText() {
 			setCodestring(
-				`<svg width="${width.sliderProps.mVal.get()}" height="${height.sliderProps.mVal.get()}" viewbox="${vbX.sliderProps.mVal.get()} ${vbY.sliderProps.mVal.get()} ${vbWH.sliderProps.mVal.get()} ${vbWH.sliderProps.mVal.get()}" >`
+				`<svg width="${width.sliderProps.mVal.get()}" height="${height.sliderProps.mVal.get()}" viewbox="${vbX.sliderProps.mVal.get()} ${vbY.sliderProps.mVal.get()} ${vbWH.sliderProps.mVal.get()} ${vbWH.sliderProps.mVal.get()}">`
 			);
 		}
 

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import MainCanvas from "../components/mainCanvas";
@@ -21,13 +20,13 @@ export default function Home() {
 				vbY={vbY.animVal}
 				vbWH={vbWH.animVal}
 			/>
-			<div className="flex flex-col h-full w-1/3 overflow-clip">
+			<div className="flex flex-col h-full w-1/2">
 				<SliderContainer>
-					<h2 className="text-xl mb-4">Element Size</h2>
+					<h2 className="text-lg mt-2">Element Size</h2>
 					<Slider {...width.sliderProps} />
 					<Slider {...height.sliderProps} />
 
-					<h2 className="text-xl mb-4">ViewBox</h2>
+					<h2 className="text-lg mt-2">ViewBox</h2>
 					<Slider {...vbX.sliderProps} />
 					<Slider {...vbY.sliderProps} />
 					<Slider {...vbWH.sliderProps} />
