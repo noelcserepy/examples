@@ -1,14 +1,15 @@
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
 
-export default function useSliderVal(
+export default function useSliderVal({
 	label,
+	bigLabel = false,
 	initial,
 	min,
 	max,
 	stiffness,
 	damping,
-	clamp = false
-) {
+	clamp = false,
+}) {
 	const mVal = useMotionValue(initial);
 	const valSpring = useSpring(mVal, { stiffness, damping });
 	let valSpringClamped = null;
@@ -19,6 +20,7 @@ export default function useSliderVal(
 
 	const sliderProps = {
 		label,
+		bigLabel,
 		initial,
 		min,
 		max,

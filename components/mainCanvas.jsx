@@ -1,8 +1,15 @@
 import { motion, useMotionTemplate } from "framer-motion";
-import Mountains from "../public/mountains.svg";
+import Grid from "./grid";
 import MountainPaths from "./mountainPaths";
 
-export default function MainCanvas({ width, height, vbX, vbY, vbWH }) {
+export default function MainCanvas({
+	width,
+	height,
+	vbX,
+	vbY,
+	vbWH,
+	showGrid,
+}) {
 	const vbTemplate = useMotionTemplate`${vbX} ${vbY} ${vbWH} ${vbWH}`;
 	const svgWidth = useMotionTemplate`${width}%`;
 	const svgHeight = useMotionTemplate`${height}%`;
@@ -15,12 +22,13 @@ export default function MainCanvas({ width, height, vbX, vbY, vbWH }) {
 
 			<div className="text-orange">{`<svg>`}</div>
 			<motion.svg
-				viewBox={vbTemplate}
 				width={svgWidth}
 				height={svgHeight}
+				viewBox={vbTemplate}
 				xmlns="http://www.w3.org/2000/svg"
-				className="border-4 border-orange">
+				className={`border-4 border-orange`}>
 				<MountainPaths />
+				{showGrid && <Grid />}
 			</motion.svg>
 		</motion.div>
 	);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Slider({ label, initial, min, max, mVal }) {
+export default function Slider({ label, bigLabel, initial, min, max, mVal }) {
 	const [value, setValue] = useState(Math.round(mVal.get()));
 
 	useEffect(() => {
@@ -9,7 +9,12 @@ export default function Slider({ label, initial, min, max, mVal }) {
 
 	return (
 		<div className="flex flex-col w-full mb-2">
-			<label className="text-slate-700 text-sm font-normal">{label}</label>
+			<label
+				className={` ${
+					bigLabel ? "text-black text-lg" : "text-slate-700 text-sm font-normal"
+				}`}>
+				{label}
+			</label>
 			<div className="flex justify-between">
 				<input
 					className="cursor-pointer w-full"
