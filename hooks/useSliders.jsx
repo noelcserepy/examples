@@ -6,8 +6,8 @@ export default function useSliders() {
 
 	const width = useSliderVal("Width", 60, 0, 100, stiffness, damping, true);
 	const height = useSliderVal("Height", 60, 0, 100, stiffness, damping, true);
-	const vbX = useSliderVal("X", 379, -100, 1100, stiffness, damping);
-	const vbY = useSliderVal("Y", 173, -100, 1100, stiffness, damping);
+	const vbX = useSliderVal("X", 0, -100, 1100, stiffness, damping);
+	const vbY = useSliderVal("Y", 0, -100, 1100, stiffness, damping);
 	const vbWH = useSliderVal(
 		"Width & Height",
 		231,
