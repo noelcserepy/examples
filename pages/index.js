@@ -14,7 +14,7 @@ export default function Home() {
 	const { width, height, vbX, vbY, vbWH } = sliders;
 
 	return (
-		<div className="h-screen w-screen flex justify-between bg-background text-primary font-example font-semibold text-lg">
+		<div className="h-screen w-screen flex justify-between bg-background text-primary font-example font-semibold text-lg overflow-clip">
 			<MainCanvas
 				width={width.animVal}
 				height={height.animVal}
@@ -23,7 +23,15 @@ export default function Home() {
 				vbWH={vbWH.animVal}
 				showGrid={showGrid}
 			/>
-			<div className="flex flex-col h-full w-1/2">
+			<div className="flex flex-col h-full w-1/2 overflow-y-scroll">
+				<div className="w-full text-xs">
+					<SyntaxHighlighter
+						language="javascript"
+						style={vscDarkPlus}
+						wrapLongLines={true}>
+						{codeString}
+					</SyntaxHighlighter>
+				</div>
 				<SliderContainer>
 					<Slider {...width.sliderProps} />
 					<Slider {...height.sliderProps} />
@@ -38,15 +46,6 @@ export default function Home() {
 						Toggle Grid
 					</button>
 				</SliderContainer>
-
-				<div className="w-full text-xs mt-10">
-					<SyntaxHighlighter
-						language="javascript"
-						style={vscDarkPlus}
-						wrapLongLines={true}>
-						{codeString}
-					</SyntaxHighlighter>
-				</div>
 			</div>
 		</div>
 	);
