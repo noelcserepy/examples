@@ -20,7 +20,7 @@ export default function Slider({ label, initial, min, max, mVal }) {
 					max={max}
 					step={1}
 					onChange={e => setValue(e.target.value)}
-					onDoubleClick={e => setValue(initial)}
+					onDoubleClick={() => setValue(initial)}
 				/>
 				<p className="w-1/6 text-right text-sm">{value}</p>
 			</div>
