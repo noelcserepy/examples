@@ -5,7 +5,7 @@ export default function Slider({ label, bigLabel, initial, min, max, mVal }) {
 
 	useEffect(() => {
 		mVal.set(value);
-	}, [value]);
+	}, [value, mVal]);
 
 	return (
 		<div className="flex flex-col w-full mb-2">
