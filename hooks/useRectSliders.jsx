@@ -6,6 +6,7 @@ export default function useRectSliders() {
 
 	const rectX = useSliderVal({
 		label: "X",
+		bigLabel: true,
 		initial: 0,
 		min: -100,
 		max: 1100,
@@ -14,6 +15,7 @@ export default function useRectSliders() {
 	});
 	const rectY = useSliderVal({
 		label: "Y",
+		bigLabel: true,
 		initial: 0,
 		min: -100,
 		max: 1100,
@@ -22,6 +24,7 @@ export default function useRectSliders() {
 	});
 	const rectWH = useSliderVal({
 		label: "Width & Height",
+		bigLabel: true,
 		initial: 150,
 		min: 1,
 		max: 1000,

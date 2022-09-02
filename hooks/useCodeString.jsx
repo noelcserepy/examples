@@ -6,11 +6,13 @@ export default function useCodeString({ sliders, rect, showRectangle }) {
 
 	const [codeString, setCodestring] = useState(
 		`<svg width="${width.sliderProps.initial}" ` +
-			`height="${height.sliderProps.initial}"` +
-			`viewbox="${vbX.sliderProps.initial} ` +
+			`height="${height.sliderProps.initial}"\n` +
+			`    viewbox="${vbX.sliderProps.initial} ` +
 			`${vbY.sliderProps.initial} ` +
 			`${vbWH.sliderProps.initial} ` +
-			`${vbWH.sliderProps.initial}">\n` +
+			`${vbWH.sliderProps.initial}"\n` +
+			`    preserveAspectRatio="xMinYMin"\n` +
+			`    xmlns="http://www.w3.org/2000/svg">\n` +
 			`    <rect x="${rectX.sliderProps.initial}" ` +
 			`y="${rectY.sliderProps.initial}" ` +
 			`width="${rectWH.sliderProps.initial}" ` +
@@ -21,11 +23,13 @@ export default function useCodeString({ sliders, rect, showRectangle }) {
 		function updateText() {
 			setCodestring(
 				`<svg width="${width.sliderProps.mVal.get()}" ` +
-					`height="${height.sliderProps.mVal.get()}"` +
-					`viewbox="${vbX.sliderProps.mVal.get()} ` +
+					`height="${height.sliderProps.mVal.get()}"\n` +
+					`    viewbox="${vbX.sliderProps.mVal.get()} ` +
 					`${vbY.sliderProps.mVal.get()} ` +
 					`${vbWH.sliderProps.mVal.get()} ` +
-					`${vbWH.sliderProps.mVal.get()}">\n` +
+					`${vbWH.sliderProps.mVal.get()}"\n` +
+					`    preserveAspectRatio="xMinYMin"\n` +
+					`    xmlns="http://www.w3.org/2000/svg">\n` +
 					`    <rect x="${rectX.sliderProps.mVal.get()}" ` +
 					`y="${rectY.sliderProps.mVal.get()}" ` +
 					`width="${rectWH.sliderProps.mVal.get()}" ` +

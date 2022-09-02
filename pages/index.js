@@ -9,7 +9,7 @@ import useSvgSliders from "../hooks/useSvgSliders";
 
 export default function Home() {
 	const [showGrid, setShowGrid] = useState(true);
-	const [showRectangle, setShowRectangle] = useState(true);
+	const [showRectangle, setShowRectangle] = useState(false);
 	const [showMountains, setShowMountains] = useState(false);
 	const svg = useSvgSliders();
 	const rect = useRectSliders();
