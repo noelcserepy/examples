@@ -17,10 +17,10 @@ export default function MainCanvas({
 	return (
 		<motion.div className="w-full h-full flex flex-col justify-center items-center bg-primary border-primary relative">
 			<div className="absolute top-1 left-1/2 -translate-x-1/2 text-white">
-				Window
+				window viewport
 			</div>
 
-			<div className="text-orange">{`<svg>`}</div>
+			<div className="text-orange">{`<svg> viewport`}</div>
 			<motion.svg
 				width={svgWidth}
 				height={svgHeight}
