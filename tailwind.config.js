@@ -14,6 +14,10 @@ module.exports = {
 				primary: "#0D1823",
 				secondary: "#556883",
 				orange: "#BF4D00",
+				mainBlue: "#0075ff",
+				maroon: "#b8336a",
+				yellow: "#ffbc0a",
+				lightBlue: "#17bebb",
 			},
 			borderWidth: {
 				16: "16px",

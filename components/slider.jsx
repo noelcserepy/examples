@@ -11,7 +11,9 @@ export default function Slider({ label, bigLabel, initial, min, max, mVal }) {
 		<div className="flex flex-col w-full mb-2">
 			<label
 				className={` ${
-					bigLabel ? "text-black text-lg" : "text-slate-700 text-sm font-normal"
+					bigLabel
+						? "text-black text-base"
+						: "text-slate-700 text-sm font-normal"
 				}`}>
 				{label}
 			</label>

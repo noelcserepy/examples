@@ -59,9 +59,8 @@ export default function Grid() {
 				height="1000%"
 				fill="url(#hundred)"
 			/>
-
-			<circle cx="0" cy="0" r="7" className="fill-orange" />
-			<text x="-14" y="-20" className="fill-orange">
+			<circle cx="0" cy="0" r="5" className="fill-orange" />
+			<text x="-14" y="-20" className="fill-orange text-sm">
 				{`(0, 0)`}
 			</text>
 		</>

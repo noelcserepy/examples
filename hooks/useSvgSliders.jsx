@@ -1,6 +1,6 @@
 import useSliderVal from "./useSliderVal";
 
-export default function useSliders() {
+export default function useSvgSliders() {
 	const stiffness = 1000;
 	const damping = 50;
 

@@ -1,18 +1,21 @@
-import { motion, useMotionTemplate } from "framer-motion";
+import { motion, useMotionTemplate, useTransform } from "framer-motion";
 import Grid from "./grid";
 import MountainPaths from "./mountainPaths";
 
 export default function MainCanvas({
-	width,
-	height,
-	vbX,
-	vbY,
-	vbWH,
+	svg,
+	rect,
 	showGrid,
+	showRectangle,
+	showMountains,
 }) {
-	const vbTemplate = useMotionTemplate`${vbX} ${vbY} ${vbWH} ${vbWH}`;
-	const svgWidth = useMotionTemplate`${width}%`;
-	const svgHeight = useMotionTemplate`${height}%`;
+	const vbTemplate = useMotionTemplate`${svg.vbX.animVal} ${svg.vbY.animVal} ${svg.vbWH.animVal} ${svg.vbWH.animVal}`;
+	const svgWidth = useMotionTemplate`${svg.width.animVal}%`;
+	const svgHeight = useMotionTemplate`${svg.height.animVal}%`;
+
+	const rectX = useMotionTemplate`${rect.rectX.animVal}`;
+	const rectY = useMotionTemplate`${rect.rectY.animVal}`;
+	const rectWH = useMotionTemplate`${rect.rectWH.animVal}`;
 
 	return (
 		<motion.div className="w-full h-full flex flex-col justify-center items-center bg-primary border-primary relative">
@@ -28,8 +31,21 @@ export default function MainCanvas({
 				preserveAspectRatio="xMinYMin"
 				xmlns="http://www.w3.org/2000/svg"
 				className={`border-4 border-orange`}>
-				<MountainPaths />
+				{showMountains && <MountainPaths />}
+
 				{showGrid && <Grid />}
+
+				{showRectangle && (
+					<motion.rect
+						x={rectX}
+						y={rectY}
+						width={rectWH}
+						height={rectWH}
+						stroke="#b8336a"
+						strokeWidth={2}
+						fill="none"
+					/>
+				)}
 			</motion.svg>
 		</motion.div>
 	);
