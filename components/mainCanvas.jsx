@@ -25,6 +25,7 @@ export default function MainCanvas({
 				width={svgWidth}
 				height={svgHeight}
 				viewBox={vbTemplate}
+				preserveAspectRatio="xMinYMin"
 				xmlns="http://www.w3.org/2000/svg"
 				className={`border-4 border-orange`}>
 				<MountainPaths />
