@@ -44,13 +44,13 @@ export default function Home() {
 						</button>
 						<button
 							className="text-[#0075ff] border border-[#b2b2b2] rounded-md w-min p-1 whitespace-nowrap m-1"
-							onClick={() => setShowRectangle(!showRectangle)}>
-							Toggle Rectangle
+							onClick={() => setShowMountains(!showMountains)}>
+							Toggle Image
 						</button>
 						<button
 							className="text-[#0075ff] border border-[#b2b2b2] rounded-md w-min p-1 whitespace-nowrap m-1"
-							onClick={() => setShowMountains(!showMountains)}>
-							Toggle Image
+							onClick={() => setShowRectangle(!showRectangle)}>
+							Toggle Rectangle
 						</button>
 					</div>
 					<p className="text-slate-700 text-xs font-normal">
