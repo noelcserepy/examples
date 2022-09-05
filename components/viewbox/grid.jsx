@@ -53,14 +53,14 @@ export default function Grid() {
 			<rect x="-500%" y="-500%" width="1000%" height="1000%" fill="url(#one)" />
 			<rect x="-500%" y="-500%" width="1000%" height="1000%" fill="url(#ten)" />
 			<rect
-				x="-500%"
-				y="-500%"
-				width="1000%"
-				height="1000%"
+				x="-5000%"
+				y="-5000%"
+				width="10000%"
+				height="10000%"
 				fill="url(#hundred)"
 			/>
-			<circle cx="0" cy="0" r="5" className="fill-orange" />
-			<text x="-14" y="-20" className="fill-orange text-sm">
+			<circle cx="0" cy="0" r="1" className="fill-orange" />
+			<text x="-2" y="-2" className="fill-orange text-[0.1rem]">
 				{`(0, 0)`}
 			</text>
 		</>

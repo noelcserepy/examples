@@ -1,7 +1,7 @@
 import Slider from "../../components/slider";
-import CodeBlock from "./codeBlock";
+import CodeBlock from "./vpCodeBlock";
 
-export default function Controls({
+export default function VpControls({
 	sliders,
 	showInnerSvg,
 	setShowInnerSvg,

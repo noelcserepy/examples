@@ -16,9 +16,8 @@ export default function MotionMountains({
 			width={widthTemplate}
 			height={heightTemplate}
 			viewBox="0 0 1000 666"
-			// preserveAspectRatio="xMinYMin"
 			xmlns="http://www.w3.org/2000/svg"
-			className="border-4 border-orange before:content-[`hey`]">
+			className="border-4 border-orange">
 			<MountainPaths />
 			{innerTitle && (
 				<text x="5" y="5%" className="stroke-orange fill-orange text-4xl">

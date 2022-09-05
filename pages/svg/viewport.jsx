@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useViewportSliders from "../../hooks/useViewportSliders";
-import Canvas from "../../components/viewport/canvas";
-import Controls from "../../components/viewport/controls";
+import VpCanvas from "../../components/viewport/vpCanvas";
+import VpControls from "../../components/viewport/vpControls";
 
 export default function Viewport() {
 	const [showInnerSvg, setShowInnerSvg] = useState(false);
@@ -10,12 +10,12 @@ export default function Viewport() {
 
 	return (
 		<div className="h-screen w-screen flex justify-between bg-background text-primary font-example font-semibold text-base overflow-clip">
-			<Canvas
+			<VpCanvas
 				sliders={sliders}
 				showInnerSvg={showInnerSvg}
 				showSecondSvg={showSecondSvg}
 			/>
-			<Controls
+			<VpControls
 				sliders={sliders}
 				showInnerSvg={showInnerSvg}
 				setShowInnerSvg={() => setShowInnerSvg(!showInnerSvg)}

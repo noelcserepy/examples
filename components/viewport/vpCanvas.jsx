@@ -1,6 +1,6 @@
 import MotionMountains from "./motionMountains";
 
-export default function Canvas({ sliders, showInnerSvg, showSecondSvg }) {
+export default function VpCanvas({ sliders, showInnerSvg, showSecondSvg }) {
 	const { width, height, innerW, innerH, secondW, secondH } = sliders;
 
 	return (

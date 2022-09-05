@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-export default function CodeBlock({ sliders, showInnerSvg, showSecondSvg }) {
+export default function VpCodeBlock({ sliders, showInnerSvg, showSecondSvg }) {
 	const { width, height, innerW, innerH, secondW, secondH } = sliders;
 	function makeString(w, h, iw, ih, sw, sh) {
 		const codeStr = `<svg width="${w}%" height="${h}%">

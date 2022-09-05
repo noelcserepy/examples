@@ -5,6 +5,8 @@ export default function Home() {
 		<ul>
 			<li>
 				<Link href="/svg/viewport">Viewport</Link>
+			</li>
+			<li>
 				<Link href="/svg/viewbox">viewBox</Link>
 			</li>
 		</ul>
