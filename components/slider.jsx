@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 
-export default function Slider({ label, bigLabel, initial, min, max, mVal }) {
+export default function Slider({
+	disabled,
+	label,
+	bigLabel,
+	initial,
+	min,
+	max,
+	mVal,
+}) {
 	const [value, setValue] = useState(Math.round(mVal.get()));
 
 	useEffect(() => {
@@ -8,18 +16,21 @@ export default function Slider({ label, bigLabel, initial, min, max, mVal }) {
 	}, [value, mVal]);
 
 	return (
-		<div className="flex flex-col w-full mb-2">
+		<div
+			className={`flex flex-col w-full mb-2 ${disabled ? "opacity-10" : ""}`}>
 			<label
 				className={` ${
 					bigLabel
-						? "text-black text-base"
-						: "text-slate-700 text-sm font-normal"
+						? "text-black text-base "
+						: "text-slate-700 text-sm font-normal "
 				}`}>
 				{label}
 			</label>
 			<div className="flex justify-between">
 				<input
-					className="cursor-pointer w-full"
+					data-theme="mine"
+					disabled={disabled}
+					className="range range-xs range-accent w-full"
 					name={label}
 					type="range"
 					value={value}

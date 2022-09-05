@@ -30,5 +30,20 @@ module.exports = {
 			example: ["Work Sans", "sans-serif"],
 		},
 	},
-	plugins: [],
+
+	plugins: [require("daisyui")],
+
+	daisyui: {
+		themes: [
+			{
+				mine: {
+					primary: "#0D1823",
+					secondary: "#b8336a",
+					accent: "#BF4D00",
+					neutral: "#EAEEF5",
+					"base-100": "#ffffff",
+				},
+			},
+		],
+	},
 };

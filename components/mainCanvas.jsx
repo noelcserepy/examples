@@ -1,4 +1,4 @@
-import { motion, useMotionTemplate, useTransform } from "framer-motion";
+import { motion, useMotionTemplate } from "framer-motion";
 import Grid from "./grid";
 import MountainPaths from "./mountainPaths";
 
