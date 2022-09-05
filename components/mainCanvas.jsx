@@ -1,6 +1,6 @@
 import { motion, useMotionTemplate } from "framer-motion";
 import Grid from "./grid";
-import MountainPaths from "./mountainPaths";
+import MountainPaths from "./viewport/mountainPaths";
 
 export default function MainCanvas({
 	svg,
