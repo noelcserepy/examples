@@ -13,8 +13,17 @@ export default function Canvas({ sliders, showInnerSvg, showSecondSvg }) {
 					<MotionMountains
 						width={innerW}
 						height={innerH}
-						innerTitle="Inner SVG Viewport"
-					/>
+						innerTitle="Inner SVG Viewport">
+						<rect
+							x="0"
+							y="0"
+							width="100%"
+							height="100%"
+							fill="none"
+							className="stroke-orange"
+							strokeWidth="10"
+						/>
+					</MotionMountains>
 				)}
 			</MotionMountains>
 
