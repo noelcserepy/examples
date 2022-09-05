@@ -16,8 +16,7 @@ export default function Slider({
 	}, [value, mVal]);
 
 	return (
-		<div
-			className={`flex flex-col w-full mb-2 ${disabled ? "opacity-10" : ""}`}>
+		<div className={`flex flex-col w-full ${disabled ? "opacity-10" : ""}`}>
 			<label
 				className={` ${
 					bigLabel
@@ -26,11 +25,11 @@ export default function Slider({
 				}`}>
 				{label}
 			</label>
-			<div className="flex justify-between">
+			<div className="flex justify-between items-center">
 				<input
 					data-theme="mine"
 					disabled={disabled}
-					className="range range-xs range-accent w-full"
+					className="range range-xs range-accent w-full h-2 sm:h-full "
 					name={label}
 					type="range"
 					value={value}
@@ -40,7 +39,7 @@ export default function Slider({
 					onChange={e => setValue(e.target.value)}
 					onDoubleClick={() => setValue(initial)}
 				/>
-				<p className="w-1/6 text-right text-sm">{value}</p>
+				<p className="w-1/6 text-right text-xs">{value}</p>
 			</div>
 		</div>
 	);

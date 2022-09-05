@@ -11,20 +11,20 @@ export default function Controls({
 	const { width, height, innerW, innerH, secondW, secondH } = sliders;
 
 	return (
-		<div className="flex flex-col h-full w-2/5 overflow-y-hidden p-4">
-			<div className="h-full">
-				<div className="">
-					<label className="label cursor-pointer">
-						<span className="label-text">SVG Viewport</span>
+		<div className="flex flex-col h-full w-2/5 overflow-y-scroll overflow-x-hidden p-2 py-1">
+			<div className="flex flex-col h-full justify-between">
+				<div className="flex flex-col sm:space-y-2">
+					<label className="flex items-center justify-between cursor-pointer">
+						<span className="text-sm">SVG Viewport</span>
 					</label>
 
 					<Slider {...width.sliderProps} />
 					<Slider {...height.sliderProps} />
 				</div>
 
-				<div className="">
-					<label className="label cursor-pointer">
-						<span className="label-text">Second SVG Viewport</span>
+				<div className="flex flex-col sm:space-y-2">
+					<label className="flex items-center justify-between cursor-pointer">
+						<span className="text-sm">Second SVG Viewport</span>
 						<input
 							type="checkbox"
 							className="toggle toggle-accent"
@@ -37,9 +37,9 @@ export default function Controls({
 					<Slider disabled={!showSecondSvg} {...secondH.sliderProps} />
 				</div>
 
-				<div className="">
-					<label className="label cursor-pointer">
-						<span className="label-text">Inner SVG Viewport</span>
+				<div className="flex flex-col sm:space-y-2">
+					<label className="flex items-center justify-between cursor-pointer">
+						<span className="text-sm">Inner SVG Viewport</span>
 						<input
 							type="checkbox"
 							className="toggle toggle-accent"
