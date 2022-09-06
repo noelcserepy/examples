@@ -1,4 +1,4 @@
-import Slider from "../../components/slider";
+import Slider from "../common/slider";
 import CodeBlock from "./vpCodeBlock";
 
 export default function VpControls({

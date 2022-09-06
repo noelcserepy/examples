@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useMotionTemplate } from "framer-motion";
-import MountainPaths from "./mountainPaths";
+import MountainPaths from "../common/mountainPaths";
 
 export default function MotionMountains({
 	width,

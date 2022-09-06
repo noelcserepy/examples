@@ -9,6 +9,9 @@ export default function Home() {
 			<li>
 				<Link href="/svg/viewbox">viewBox</Link>
 			</li>
+			<li>
+				<Link href="/svg/preserveaspectratio">preserveAspectRatio</Link>
+			</li>
 		</ul>
 	);
 }

@@ -22,6 +22,17 @@ export default function Viewport() {
 				showSecondSvg={showSecondSvg}
 				setShowSecondSvg={() => setShowSecondSvg(!showSecondSvg)}
 			/>
+			<div className="text-white text-xs font-light absolute bottom-2 left-2">
+				<span>
+					Created by <a href="https://www.noelcserepy.com/">Noël Cserépy</a>{" "}
+				</span>
+				<span>
+					- Image by{" "}
+					<a href="https://www.freepik.com/free-vector/gradient-mountain-landscape_20008477.htm#query=mountain&position=23&from_view=keyword#position=23&query=mountain">
+						Freepik
+					</a>
+				</span>
+			</div>
 		</div>
 	);
 }

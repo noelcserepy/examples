@@ -21,7 +21,7 @@ export default function Slider({
 				className={` ${
 					bigLabel
 						? "text-black text-base "
-						: "text-slate-700 text-sm font-normal "
+						: "text-slate-700 text-sm font-normal"
 				}`}>
 				{label}
 			</label>

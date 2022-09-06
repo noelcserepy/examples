@@ -1,4 +1,4 @@
-import Slider from "../slider";
+import Slider from "../common/slider";
 import VbCodeBlock from "./vnCodeBlock";
 
 export default function VbControls({ sliders, combineWH, setCombineWH }) {
