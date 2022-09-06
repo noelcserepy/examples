@@ -1,4 +1,6 @@
-export default function Grid() {
+import { motion } from "framer-motion";
+
+export default function Grid({ vbX, vbY, vbW, vbH }) {
 	return (
 		<>
 			<defs>
@@ -56,13 +58,25 @@ export default function Grid() {
 				</pattern>
 			</defs>
 
-			<rect x="-500%" y="-500%" width="1000%" height="1000%" fill="url(#one)" />
-			<rect x="-500%" y="-500%" width="1000%" height="1000%" fill="url(#ten)" />
-			<rect
-				x="-5000%"
-				y="-5000%"
-				width="10000%"
-				height="10000%"
+			<motion.rect
+				x={vbX.animVal}
+				y={vbY.animVal}
+				width={vbW.animVal}
+				height={vbH.animVal}
+				fill="url(#one)"
+			/>
+			<motion.rect
+				x={vbX.animVal}
+				y={vbY.animVal}
+				width={vbW.animVal}
+				height={vbH.animVal}
+				fill="url(#ten)"
+			/>
+			<motion.rect
+				x={vbX.animVal}
+				y={vbY.animVal}
+				width={vbW.animVal}
+				height={vbH.animVal}
 				fill="url(#hundred)"
 			/>
 			<circle cx="0" cy="0" r="1" className="fill-orange" />

@@ -12,9 +12,10 @@ export default function VbCanvas({ sliders, combineWH }) {
 			<span className="text-orange">SVG Viewport</span>
 			<motion.svg
 				viewBox={combineWH ? combineTemplate : vbTemplate}
+				preserveAspectRatio="xMidYMid meet"
 				xmlns="http://www.w3.org/2000/svg"
 				className="border-4 border-orange w-[90%] h-[90%]">
-				<Grid />
+				<Grid vbX={vbX} vbY={vbY} vbW={vbW} vbH={vbH} />
 
 				<motion.rect
 					x={rectX.animVal}

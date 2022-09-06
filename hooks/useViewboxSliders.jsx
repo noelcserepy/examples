@@ -6,17 +6,17 @@ export default function useViewportSliders() {
 
 	const vbX = useSliderVal({
 		label: "Min-x",
-		initial: -10,
-		min: -10,
-		max: 110,
+		initial: 0,
+		min: -200,
+		max: 500,
 		stiffness: stiffness,
 		damping: damping,
 	});
 	const vbY = useSliderVal({
 		label: "Min-y",
-		initial: -10,
-		min: -10,
-		max: 110,
+		initial: 0,
+		min: -200,
+		max: 500,
 		stiffness: stiffness,
 		damping: damping,
 	});
@@ -24,7 +24,7 @@ export default function useViewportSliders() {
 		label: "Width",
 		initial: 50,
 		min: 1,
-		max: 100,
+		max: 1000,
 		stiffness: stiffness,
 		damping: damping,
 		clamp: true,
@@ -33,7 +33,7 @@ export default function useViewportSliders() {
 		label: "Height",
 		initial: 50,
 		min: 1,
-		max: 100,
+		max: 1000,
 		stiffness: stiffness,
 		damping: damping,
 		clamp: true,
