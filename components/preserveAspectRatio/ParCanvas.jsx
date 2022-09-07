@@ -16,6 +16,7 @@ export default function ParCanvas({ sliders, meet, align, vpAxes, vbAxes }) {
 			<motion.svg
 				width={widthTemplate}
 				height={heightTemplate}
+				xmlns="http://www.w3.org/2000/svg"
 				className="border-4 border-orange">
 				{vpAxes && <Axes strokeWidth={3} />}
 				<ParMotionMountains preserveAspectRatio={`${align} ${meet}`}>
