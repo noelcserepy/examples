@@ -15,6 +15,15 @@ export default function VbControls({ sliders, combineWH, setCombineWH }) {
 					<Slider {...vbX.sliderProps} />
 					<Slider {...vbY.sliderProps} />
 
+					{combineWH ? (
+						<Slider {...vbW.sliderProps} label="Width & Height" />
+					) : (
+						<>
+							<Slider {...vbW.sliderProps} />
+							<Slider {...vbH.sliderProps} />
+						</>
+					)}
+
 					<label className="flex items-center justify-between cursor-pointer">
 						<span className="text-sm font-normal">Link Width & Height</span>
 						<input
@@ -24,14 +33,6 @@ export default function VbControls({ sliders, combineWH, setCombineWH }) {
 							onChange={setCombineWH}
 						/>
 					</label>
-					{combineWH ? (
-						<Slider {...vbW.sliderProps} label="Width & Height" />
-					) : (
-						<>
-							<Slider {...vbW.sliderProps} />
-							<Slider {...vbH.sliderProps} />
-						</>
-					)}
 				</div>
 
 				<div className="flex flex-col sm:space-y-2">
