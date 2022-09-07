@@ -21,7 +21,7 @@ export default function VbCanvas({ sliders, combineWH }) {
 					x={rectX.animVal}
 					y={rectY.animVal}
 					width={rectW.animVal}
-					height={rectH.animVal}
+					height={combineWH ? rectW.animVal : rectH.animVal}
 					stroke="#b8336a"
 					strokeWidth="1"
 					fill="none"
