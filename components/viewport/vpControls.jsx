@@ -1,5 +1,8 @@
 import Slider from "../common/slider";
 import CodeBlock from "./vpCodeBlock";
+import ControlsWrapper from "../common/controlsWrapper";
+import Section from "../common/section";
+import Checkbox from "../common/checkbox";
 
 export default function VpControls({
 	sliders,
@@ -11,50 +14,36 @@ export default function VpControls({
 	const { width, height, innerW, innerH, secondW, secondH } = sliders;
 
 	return (
-		<div className="flex flex-col h-full w-2/5 overflow-y-scroll overflow-x-hidden p-2 py-1">
-			<div className="flex flex-col h-full justify-between">
-				<div className="flex flex-col sm:space-y-2">
-					<label className="flex items-center justify-between cursor-pointer">
-						<span className="text-sm">SVG Viewport</span>
-					</label>
+		<ControlsWrapper>
+			<Section label="SVG Viewport">
+				<Slider {...width.sliderProps} />
+				<Slider {...height.sliderProps} />
+			</Section>
 
-					<Slider {...width.sliderProps} />
-					<Slider {...height.sliderProps} />
-				</div>
+			<Section label="SVG Viewport #2">
+				<Checkbox
+					checked={showSecondSvg}
+					onChange={setShowSecondSvg}
+					label="show"
+				/>
+				<Slider disabled={!showSecondSvg} {...secondW.sliderProps} />
+				<Slider disabled={!showSecondSvg} {...secondH.sliderProps} />
+			</Section>
 
-				<div className="flex flex-col sm:space-y-2">
-					<label className="flex items-center justify-between cursor-pointer">
-						<span className="text-sm">Second SVG Viewport</span>
-						<input
-							type="checkbox"
-							className="toggle toggle-accent"
-							checked={showSecondSvg}
-							onChange={setShowSecondSvg}
-						/>
-					</label>
+			<Section label="Inner SVG Viewport">
+				<Checkbox
+					checked={showInnerSvg}
+					onChange={setShowInnerSvg}
+					label="show"
+				/>
+				<Slider disabled={!showInnerSvg} {...innerW.sliderProps} />
+				<Slider disabled={!showInnerSvg} {...innerH.sliderProps} />
+			</Section>
 
-					<Slider disabled={!showSecondSvg} {...secondW.sliderProps} />
-					<Slider disabled={!showSecondSvg} {...secondH.sliderProps} />
-				</div>
+			<p className="text-slate-700 text-xs font-normal">
+				(Double click sliders to reset)
+			</p>
 
-				<div className="flex flex-col sm:space-y-2">
-					<label className="flex items-center justify-between cursor-pointer">
-						<span className="text-sm">Inner SVG Viewport</span>
-						<input
-							type="checkbox"
-							className="toggle toggle-accent"
-							checked={showInnerSvg}
-							onChange={setShowInnerSvg}
-						/>
-					</label>
-
-					<Slider disabled={!showInnerSvg} {...innerW.sliderProps} />
-					<Slider disabled={!showInnerSvg} {...innerH.sliderProps} />
-				</div>
-				<p className="text-slate-700 text-xs font-normal">
-					(Double click sliders to reset)
-				</p>
-			</div>
 			<div className="h-1/3 bg-[#1e1e1e]">
 				<CodeBlock
 					sliders={sliders}
@@ -62,6 +51,6 @@ export default function VpControls({
 					showSecondSvg={showSecondSvg}
 				/>
 			</div>
-		</div>
+		</ControlsWrapper>
 	);
 }

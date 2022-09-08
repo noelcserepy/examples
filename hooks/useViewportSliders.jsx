@@ -5,7 +5,7 @@ export default function useViewportSliders() {
 	const damping = 50;
 
 	const width = useSliderVal({
-		label: "Width",
+		label: "width",
 		bigLabel: false,
 		initial: 80,
 		min: 0,
@@ -15,7 +15,7 @@ export default function useViewportSliders() {
 		clamp: true,
 	});
 	const height = useSliderVal({
-		label: "Height",
+		label: "height",
 		bigLabel: false,
 		initial: 80,
 		min: 0,
@@ -26,7 +26,7 @@ export default function useViewportSliders() {
 	});
 
 	const innerW = useSliderVal({
-		label: "Width",
+		label: "width",
 		bigLabel: false,
 		initial: 80,
 		min: 0,
@@ -36,7 +36,7 @@ export default function useViewportSliders() {
 		clamp: true,
 	});
 	const innerH = useSliderVal({
-		label: "Height",
+		label: "height",
 		bigLabel: false,
 		initial: 80,
 		min: 0,
@@ -47,7 +47,7 @@ export default function useViewportSliders() {
 	});
 
 	const secondW = useSliderVal({
-		label: "Width",
+		label: "width",
 		bigLabel: false,
 		initial: 80,
 		min: 0,
@@ -57,7 +57,7 @@ export default function useViewportSliders() {
 		clamp: true,
 	});
 	const secondH = useSliderVal({
-		label: "Height",
+		label: "height",
 		bigLabel: false,
 		initial: 80,
 		min: 0,

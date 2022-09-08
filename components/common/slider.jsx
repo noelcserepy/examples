@@ -25,13 +25,13 @@ export default function Slider({
 				}`}>
 				{label}
 			</label>
-			<div className="flex justify-between items-center">
+			<div className="flex justify-between items-center w-full">
 				<input
+					className="range range-xs range-accent w-full h-2 sm:h-4"
+					type="range"
 					data-theme="mine"
 					disabled={disabled}
-					className="range range-xs range-accent w-full h-2 sm:h-full "
 					name={label}
-					type="range"
 					value={value}
 					min={min}
 					max={max}

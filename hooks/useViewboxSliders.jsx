@@ -5,7 +5,7 @@ export default function useViewportSliders() {
 	const damping = 50;
 
 	const vbX = useSliderVal({
-		label: "Min-x",
+		label: "min-x",
 		initial: 0,
 		min: -100,
 		max: 200,
@@ -13,7 +13,7 @@ export default function useViewportSliders() {
 		damping: damping,
 	});
 	const vbY = useSliderVal({
-		label: "Min-y",
+		label: "min-y",
 		initial: 0,
 		min: -100,
 		max: 200,
@@ -21,7 +21,7 @@ export default function useViewportSliders() {
 		damping: damping,
 	});
 	const vbW = useSliderVal({
-		label: "Width",
+		label: "width",
 		initial: 50,
 		min: 1,
 		max: 300,
@@ -30,7 +30,7 @@ export default function useViewportSliders() {
 		clamp: true,
 	});
 	const vbH = useSliderVal({
-		label: "Height",
+		label: "height",
 		initial: 50,
 		min: 1,
 		max: 300,
@@ -40,7 +40,7 @@ export default function useViewportSliders() {
 	});
 
 	const rectX = useSliderVal({
-		label: "X",
+		label: "x",
 		bigLabel: false,
 		initial: 0,
 		min: -100,
@@ -49,7 +49,7 @@ export default function useViewportSliders() {
 		damping: damping,
 	});
 	const rectY = useSliderVal({
-		label: "Y",
+		label: "y",
 		bigLabel: false,
 		initial: 0,
 		min: -100,
@@ -58,7 +58,7 @@ export default function useViewportSliders() {
 		damping: damping,
 	});
 	const rectW = useSliderVal({
-		label: "Width",
+		label: "width",
 		bigLabel: false,
 		initial: 25,
 		min: 1,
@@ -68,7 +68,7 @@ export default function useViewportSliders() {
 		clamp: true,
 	});
 	const rectH = useSliderVal({
-		label: "Height",
+		label: "height",
 		bigLabel: false,
 		initial: 25,
 		min: 1,

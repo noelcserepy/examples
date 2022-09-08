@@ -15,13 +15,13 @@ export default function VbCanvas({ sliders, combineWH }) {
 				preserveAspectRatio="xMidYMid meet"
 				xmlns="http://www.w3.org/2000/svg"
 				className="border-4 border-orange w-[90%] h-[90%]">
-				<Grid vbX={vbX} vbY={vbY} vbW={vbW} vbH={vbH} />
+				<Grid vbX={vbX} vbY={vbY} vbW={vbW} vbH={combineWH ? vbW : vbH} />
 
 				<motion.rect
 					x={rectX.animVal}
 					y={rectY.animVal}
 					width={rectW.animVal}
-					height={combineWH ? rectW.animVal : rectH.animVal}
+					height={rectH.animVal}
 					stroke="#b8336a"
 					strokeWidth="1"
 					fill="none"

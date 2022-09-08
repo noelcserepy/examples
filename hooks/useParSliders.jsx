@@ -5,7 +5,7 @@ export default function useParSliders() {
 	const damping = 50;
 
 	const width = useSliderVal({
-		label: "Width",
+		label: "width",
 		bigLabel: false,
 		initial: 80,
 		min: 0,
@@ -15,7 +15,7 @@ export default function useParSliders() {
 		clamp: true,
 	});
 	const height = useSliderVal({
-		label: "Height",
+		label: "height",
 		bigLabel: false,
 		initial: 80,
 		min: 0,
