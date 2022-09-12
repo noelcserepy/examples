@@ -6,8 +6,8 @@ import useParSliders from "../../hooks/useParSliders";
 export default function PreserveAspectRatio() {
 	const [meet, setMeet] = useState("meet");
 	const [align, setAlign] = useState("xMidYMid");
-	const [vpAxes, setVpAxes] = useState(false);
-	const [vbAxes, setVbAxes] = useState(false);
+	const [vpAxes, setVpAxes] = useState(true);
+	const [vbAxes, setVbAxes] = useState(true);
 
 	const sliders = useParSliders();
 
