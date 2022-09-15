@@ -108,7 +108,7 @@ export default function PathAnimation() {
 	};
 
 	const texts = [
-		"...",
+		"Click the arrow to the right to continue.",
 		"Let's start with a path.",
 		"It can be dashed with <path-dasharray>.",
 		"Use <path-dashoffset> to move the dashes.",
