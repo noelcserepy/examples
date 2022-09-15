@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const pathVariants = {
 	0: {
@@ -95,7 +95,7 @@ const pathVariants = {
 	},
 };
 
-export default function pathAnimation() {
+export default function PathAnimation() {
 	const [stage, setStage] = useState(0);
 
 	const handleBack = () => {
