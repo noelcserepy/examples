@@ -12,6 +12,9 @@ export default function Home() {
 			<li>
 				<Link href="/svg/preserveaspectratio">preserveAspectRatio</Link>
 			</li>
+			<li>
+				<Link href="/svg/pathanimation">pathanimation</Link>
+			</li>
 		</ul>
 	);
 }
