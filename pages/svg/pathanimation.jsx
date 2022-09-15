@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useAnimationControls } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const pathVariants = {
 	0: {
@@ -32,7 +32,7 @@ const pathVariants = {
 
 		transition: {
 			strokeDashoffset: { repeat: Infinity, repeatType: "loop" },
-			duration: 1,
+			duration: 1.4,
 			repeat: 0,
 			duration: 1,
 		},
@@ -40,8 +40,8 @@ const pathVariants = {
 
 	4: {
 		strokeWidth: 4,
-		strokeDasharray: [null, "100 0", "400, 0", "200 200"],
-		strokeDashoffset: [0, 400],
+		strokeDasharray: [null, "200 50"],
+		strokeDashoffset: [0, 250],
 
 		transition: {
 			strokeDasharray: {
@@ -61,15 +61,16 @@ const pathVariants = {
 
 	5: {
 		strokeWidth: 4,
-		strokeDasharray: [null, "1300 0", "1300 1300"],
-		strokeDashoffset: 1300,
+		strokeDasharray: [null, "1300 1300"],
+		strokeDashoffset: 0,
 
 		transition: {
 			strokeDasharray: {
-				duration: 5,
+				duration: 2,
 			},
 			strokeDashoffset: {
-				duration: 4,
+				delay: 2,
+				duration: 2,
 			},
 			duration: 1,
 			repeat: 0,
@@ -78,6 +79,21 @@ const pathVariants = {
 	},
 
 	6: {
+		strokeWidth: 4,
+		strokeDasharray: "1300 1300",
+		strokeDashoffset: 1300,
+
+		transition: {
+			strokeDashoffset: {
+				duration: 2,
+			},
+			duration: 1,
+			repeat: 0,
+			duration: 1,
+		},
+	},
+
+	7: {
 		strokeWidth: 4,
 		strokeDasharray: "1300 1300",
 		strokeDashoffset: [1300, 0],
@@ -97,31 +113,63 @@ const pathVariants = {
 
 export default function PathAnimation() {
 	const [stage, setStage] = useState(0);
+	const pControls = useAnimationControls();
+	const texts = [
+		"Click the arrow to the right to continue.",
+		"Let's start with a path.",
+		"It can be dashed with a <path-dasharray> pattern.",
+		"Increasing the <path-dashoffset> moves the pattern along the path.",
+		"We can control the size of the dashes and gaps using <path-dasharray>.",
+		"Set the size of dashes and gaps to the length of the path.",
+		"Set <path-dashoffset> to the length of the path to hide the dash.",
+		"Controlling <path-dashoffset> now draws the path.",
+	];
+	const [currentText, setCurrentText] = useState(texts[stage]);
 
 	const handleBack = () => {
 		if (stage === 0) return;
 		setStage(stage - 1);
 	};
 	const handleForward = () => {
-		if (stage === 6) return;
+		if (stage === 7) return;
 		setStage(stage + 1);
 	};
 
-	const texts = [
-		"Click the arrow to the right to continue.",
-		"Let's start with a path.",
-		"It can be dashed with <path-dasharray>.",
-		"Use <path-dashoffset> to move the dashes.",
-		"Use <path-dasharray> to change the dash size and the gaps between.",
-		"Hide the path by making the dash and gap the same size as the whole path length.",
-		"Using <path-dashoffset> now looks like it draws the path.",
-	];
+	useEffect(() => {
+		const textSequence = async () => {
+			await pControls.start({
+				y: 20,
+				opacity: 0,
+				transition: {
+					duration: 0.3,
+					ease: "easeOut",
+				},
+			});
+			setCurrentText(texts[stage]);
+			pControls.set({
+				y: -20,
+			});
+			await pControls.start({
+				y: 0,
+				opacity: 1,
+				transition: {
+					duration: 0.3,
+					ease: "easeOut",
+				},
+			});
+		};
+		textSequence();
+	}, [stage]);
 
 	return (
 		<div className="w-screen h-screen bg-primary relative flex flex-col font-example font-semibold text-base justify-center p-4 items-center overflow-hidden select-none">
-			<p className="text-3xl text-center text-background mb-4">
-				{texts[stage]}
-			</p>
+			<div className="mb-4 h-1/5 flex items-center justify-center">
+				<motion.div
+					className="text-3xl text-center  text-background "
+					animate={pControls}>
+					{currentText}
+				</motion.div>
+			</div>
 			<div className="w-full h-[80%] flex justify-between items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +213,7 @@ export default function PathAnimation() {
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 14 14"
 					className={`w-1/12 h-min ${
-						stage === 6
+						stage === 7
 							? "stroke-primary cursor-default"
 							: "stroke-orange cursor-pointer"
 					}`}
@@ -183,6 +231,11 @@ export default function PathAnimation() {
 							strokeLinejoin="round"></path>
 					</g>
 				</svg>
+			</div>
+			<div className="text-white text-xs font-light absolute bottom-2 left-2">
+				<span>
+					Created by <a href="https://www.noelcserepy.com/">Noël Cserépy</a>{" "}
+				</span>
 			</div>
 		</div>
 	);
