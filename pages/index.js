@@ -15,6 +15,9 @@ export default function Home() {
 			<li>
 				<Link href="/svg/pathanimation">pathanimation</Link>
 			</li>
+			<li>
+				<Link href="/svg/shake">shake</Link>
+			</li>
 		</ul>
 	);
 }
